@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Foods for Health Goals</title>
+</head>
+<body>
+<h1>Best Foods for Health Goals</h1>
+<form action="/results" method="POST">
+<label for="goal">Health Goal:</label>
+<select name="goal" id="goal">
+{% for goal in goals %}
+<option value="{{ goal }}">{{ goal }}</option>
+{% endfor %}
+</select>
+<br>
+<label for="restriction">Dietary Restriction:</label>
+<select name="restriction" id="restriction">
+{% for restriction in restrictions %}
+<option value="{{ restriction }}">{{ restriction }}</option>
+{% endfor %}
+</select>
+<br>
+<label for="location">Geographic Location:</label>
+<select name="location" id="location">
+<option value="global">Global</option>
+<option value="us">United States</option>
+<option value="canada">Canada</option>
+<option value="mexico">Mexico</option>
+</select>
+<br>
+<input type="submit" value="Find Foods">
+</form>
+</body>
+</html>
+
+
